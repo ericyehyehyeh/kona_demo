@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>KONA</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/sidebars.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <script src="../static/js/main.js"></script>
+  <main>
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">Channels</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto" id="side_list">
+        {% for Channel in Channels %}
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white" id="{{Channel}}" aria-current="page" onclick="channel_hit(this)">
+            #{{Channel}}
+          </a>
+        </li>
+        <hr>
+        {% endfor %}
+      </ul>
+      <hr>
+
+    </div>
+    <div class="b-example-divider"></div>
+
+    <div class="bg-light overflow-auto" style="flex-grow: 1;">
+
+      <section class="text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 id="Org_title" class="fw-light"><b>#{{Current_Channel}} Organization Chart</b></h1>
+          </div>
+        </div>
+      </section>
+
+      <div class="container" id="team_block_head">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2" id="team_block">
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="80" xmlns="http://www.w3.org/2000/svg"
+                role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <rect width="100%" height="100%" fill="#808080" />
+                <text id="team_name" x="50%" y="50%" fill="#eceeef" dy=".3em" style="font-size:30px"></text>
+              </svg>
+
+              <div class="card-body">
+                <div class="row" id="team_mem_row">
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
